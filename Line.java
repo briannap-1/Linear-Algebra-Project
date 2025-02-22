@@ -28,7 +28,7 @@ public class Line extends GeneralLine {
     setB(p);
   }
     
-  /**This method returns the three parametric equations for the line    //this works only when the second constructor is used
+  /**This method returns the three parametric equations for the line
     * @return the string version of the line
     */
   public String toString() {   
@@ -45,7 +45,6 @@ public class Line extends GeneralLine {
    /**This method checks if two lines are equal
     * @param obj the line to compare to
     */
-  //I wasn't sure how to else compare them to check for equality
   @Override
   public boolean equals (Object obj) {
     if (obj instanceof GeneralLine) {
@@ -55,15 +54,6 @@ public class Line extends GeneralLine {
     else
         return false;
   }
-  
-  //I don't know if this is what the method is supposed to do, it also causes other tests to fail when it is uncommented
-  /**This method returns the vector that is parallel to the line
-    * @return the parallel vector
-    */
-//   public Vector getVector() {
-//     Vector v = new Vector (getA().getX(), getA().getY(), getA().getZ());
-//     return v;
-//   }
   
    /**This method returns the three parametric equations for the line
      * @param line1 the first line to be considered
@@ -75,18 +65,5 @@ public class Line extends GeneralLine {
     double y = line1.getVector().getYVector() / line2.getVector().getYVector(); //checking if the vector y values are equivalent 
     double z = line1.getVector().getZVector() / line2.getVector().getZVector(); //checking if the vector z values are equivalent 
     return x == y && y == z;
-  }
-  
-  /**This method returns the intersection if the lines intersect
-    * @param line1 the first line to be considered
-    * @param line2 the second line to be considered 
-    * @return the intersection of the two lines if it exists; null otherwise
-    */
-//  public GeneralPoint intersection (GeneralLine line1, GeneralLine line2) {
-//    if (Line.isParallel(line1, line2))
-//          return false;
-//    else {     
-//
-//    }
-//  }   
+  }  
 }
